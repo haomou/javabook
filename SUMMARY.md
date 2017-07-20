@@ -24,7 +24,7 @@
     * 2.2.1 构造方法
     * 2.2.2 finalize 方法
   * [2.3 面向对象三大特性](modelpian/di-2-zhang-java-mian-xiang-dui-xiang-she-ji/23-mian-xiang-dui-xiang-san-da-te-xing.md)
-    * 2.3.1 抽象
+    * [2.3.1 抽象](modelpian/di-2-zhang-java-mian-xiang-dui-xiang-she-ji/23-mian-xiang-dui-xiang-san-da-te-xing/231-chou-xiang.md)
     * 2.3.2 继承
     * 2.3.3 封装
     * 2.3.4 多态
