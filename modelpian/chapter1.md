@@ -27,6 +27,7 @@ JAVA 半编译半解释的原理是先将 JAVA 源代码编译成中间字节码
 * C / C++
 
 * • C/C++程序
+
 * •可执行文件
 * Html / PHP / JAVA Script
 * • Html/php程序
@@ -42,13 +43,16 @@ JRE ： Java Runtime Environment， Java 运行时环境，包含 JVM 与 Java�
 
 ☞ 如果是类 Linux 操作系统，则根据 linux 平台，下载 bin 安装包或rpm 安装包，若是 bin 安装包，执行以下命令：
 
+```
 chmod u+x jdk-6u27-linux-i586.bin //修改权限
-
 ./jdk-6u27-linux-i586.bin //安装，
+```
 
 安装完后会在当前目录产生 java 文件夹。 若是 rpm 安装包，执行以下命令：
 
+```
 rpm –ivh jdk-6u21-linux-i586.rpm
+```
 
 安装完后会在/user 下产生 java 目录。
 
@@ -62,11 +66,11 @@ Windows 环境下， 在【我的电脑】右键【属性】 -&gt;【高级】 -
 
 ☞ Linux 环境下，在全局用户配置文件/etc/profile 或个人配置文件~/.bashrc 中最后添加如下内容：
 
-export JAVA\_HOME=/home/liangshihong/jdk1.6.0\_12
-
-export PATH=$JAVA\_HOME/bin:$PATH
-
-export CLASSPATH=.:$JAVA\_HOME/lib/dt.jar:$JAVA\_HOME/lib/tools.jar
+```
+export JAVA_HOME=/home/liangshihong/jdk1.6.0_12
+export PATH=$JAVA_HOME/bin:$PATH
+export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+```
 
 此时，在控制台下输入： java –version 若有正常信息输出，则 JAVA平台搭建成功。
 
