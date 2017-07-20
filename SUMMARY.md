@@ -29,7 +29,7 @@
     * 2.3.3 封装
     * 2.3.4 多态
     * 2.3.5 接口
-  * 2.4 JAVA 包
+  * [2.4 JAVA 包](modelpian/di-2-zhang-java-mian-xiang-dui-xiang-she-ji/24-java-bao.md)
   * [2.5 本章小结](modelpian/di-2-zhang-java-mian-xiang-dui-xiang-she-ji/25-ben-zhang-xiao-jie.md)
 * [第 3 章 JAVA 内存管理与异常](modelpian/di-3-zhang-java-nei-cun-guan-li-yu-yi-chang.md)
   * [3.1 JVM 内存申请](modelpian/di-3-zhang-java-nei-cun-guan-li-yu-yi-chang/31-jvm-nei-cun-shen-qing.md)
