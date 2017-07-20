@@ -20,8 +20,15 @@
     * 2.1.2 类修饰符
     * 2.1.3 成员变量修饰符
     * 2.1.4 方法修饰符
-  * 2.2 构造方法与finalize方法
-  * 2.3 面向对象三大特性
+  * [2.2 构造方法与finalize方法](modelpian/di-2-zhang-java-mian-xiang-dui-xiang-she-ji/22-gou-zao-fang-fa-yu-finalize-fang-fa.md)
+    * 2.2.1 构造方法
+    * 2.2.2 finalize 方法
+  * [2.3 面向对象三大特性](modelpian/di-2-zhang-java-mian-xiang-dui-xiang-she-ji/23-mian-xiang-dui-xiang-san-da-te-xing.md)
+    * 2.3.1 抽象
+    * 2.3.2 继承
+    * 2.3.3 封装
+    * 2.3.4 多态
+    * 2.3.5 接口
   * 2.4 JAVA 包
   * 2.5 本章小结
 * 第 3 章 JAVA 内存管理与异常
