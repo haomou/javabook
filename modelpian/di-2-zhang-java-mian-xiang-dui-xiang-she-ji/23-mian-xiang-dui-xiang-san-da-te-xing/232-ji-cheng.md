@@ -6,131 +6,61 @@
 
 下面给出一个详细的示例：
 
-  
 class Money {
 
-              public String kind;
+```
+          public String kind;
 
-               int  value; //默认是友好类的
+           int  value; //默认是友好类的
 
-               private boolean isBroken; // 私有函数不被继承
+           private boolean isBroken; // 私有函数不被继承
 
-       public Money\(String k,int v\){
+   public Money\(String k,int v\){
 
-                          this.value = v;
+                      this.value = v;
 
-                          this.kind = k;
+                      this.kind = k;
 
-                               }
+                           }
 
-        public void sayHello\(\){
+    public void sayHello\(\){
 
-                       System.out.println\("hello!"\);
-
-                 }
+                   System.out.println\("hello!"\);
 
              }
 
-  
+         }
+```
 
+       public class RMB extends Money{
 
-public class
+                       public Date year;
 
-RMB
+                       public RMB\(String k,int v,Date y\){
 
-extends
+                                        super\(k,v\); //调用父类构造函数
 
-Money
+                                        this.year = y;
 
-  
+                                   }
 
+                        public void sayWorld\(\){
 
-{
+                                         super.sayHello\(\); //或者直接写
 
-  
+                                         sayHello\(\);
 
+                                        System.out.println\("world!"\);
 
-public Date
+                                  } 
 
-year;
+                         
 
-  
+                      @override
 
+                      public void sayHello\(\){
 
-public
+                                 System.out.println\("hello!"\);
 
-RMB\(String k,int v,Date y\){
-
-  
-
-
-super\(k,v\); //
-
-调用父类构造函数
-
-  
-
-
-this.year = y;
-
-  
-
-
-}
-
-  
-
-
-public void
-
-sayWorld\(\){
-
-  
-
-
-super
-
-.sayHello\(\); //
-
-或者直接写
-
-sayHello\(\);
-
-  
-
-
-System.out.println\("world!"\);
-
-  
-
-
-}
-
-  
-
-
-@override
-
-  
-
-
-public void
-
-sayHello\(\){
-
-  
-
-
-System.out.println\("hello!"\);
-
-  
-
-
-}
-
-  
-
-
-  
-
+                                  }
 
