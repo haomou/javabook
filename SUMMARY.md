@@ -17,8 +17,8 @@
 * [第 2 章 JAVA面向对象设计](modelpian/di-2-zhang-java-mian-xiang-dui-xiang-she-ji.md)
   * [2.1 类和对象](modelpian/di-2-zhang-java-mian-xiang-dui-xiang-she-ji/21-lei-he-dui-xiang.md)
     * [2.1.1 类定义规范](modelpian/di-2-zhang-java-mian-xiang-dui-xiang-she-ji/21-lei-he-dui-xiang/211-lei-ding-yi-gui-fan.md)
-    * 2.1.2 类修饰符
-    * 2.1.3 成员变量修饰符
+    * [2.1.2 类修饰符](modelpian/di-2-zhang-java-mian-xiang-dui-xiang-she-ji/21-lei-he-dui-xiang/212-lei-xiu-shi-fu.md)
+    * [2.1.3 成员变量修饰符](modelpian/di-2-zhang-java-mian-xiang-dui-xiang-she-ji/21-lei-he-dui-xiang/213-cheng-yuan-bian-liang-xiu-shi-fu.md)
     * 2.1.4 方法修饰符
   * [2.2 构造方法与finalize方法](modelpian/di-2-zhang-java-mian-xiang-dui-xiang-she-ji/22-gou-zao-fang-fa-yu-finalize-fang-fa.md)
     * 2.2.1 构造方法
@@ -30,8 +30,9 @@
     * 2.3.4 多态
     * 2.3.5 接口
   * 2.4 JAVA 包
-  * 2.5 本章小结
-* 第 3 章 JAVA 内存管理与异常
+  * [2.5 本章小结](modelpian/di-2-zhang-java-mian-xiang-dui-xiang-she-ji/25-ben-zhang-xiao-jie.md)
+* [第 3 章 JAVA 内存管理与异常](modelpian/di-3-zhang-java-nei-cun-guan-li-yu-yi-chang.md)
+  * [3.1 JVM 内存申请](modelpian/di-3-zhang-java-nei-cun-guan-li-yu-yi-chang/31-jvm-nei-cun-shen-qing.md)
 * 第 4 章 JAVA API 介绍
 * 第 5 章 Java 的线程和 Applet
 * 第 6 章 XML 与 WebServices
