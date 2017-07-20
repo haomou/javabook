@@ -6,16 +6,15 @@ $$$$2.3.2 继承
 
 下面给出一个详细的示例：
 
-class Money {
+
 
 ```
-          public String kind;
-
+class Money {
+           public String kind;
            int  value; //默认是友好类的
-
            private boolean isBroken; // 私有函数不被继承
 
-   public Money\(String k,int v\){
+    public Money\(String k,int v\){
 
                       this.value = v;
 
@@ -58,7 +57,6 @@ class Money {
 
 
                   @override
-
                   public void sayHello\(\){
 
                              System.out.println\("hello!"\);
