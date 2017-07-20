@@ -14,13 +14,11 @@
 
 [1.1 JAVA 平台模型](/modelpian/chapter1.md)
 
+[1.2 JAVA 基础语法](/modelpian/12-java-ji-chu-yu-fa.md)
+
 ## View篇
 
-
-
 ## Controller篇
-
-
 
 ## 项目实战
 
