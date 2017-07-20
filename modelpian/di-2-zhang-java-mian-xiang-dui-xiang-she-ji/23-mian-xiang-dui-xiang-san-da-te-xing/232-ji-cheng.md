@@ -32,35 +32,48 @@ class Money {
          }
 ```
 
-       public class RMB extends Money{
+```
+   public class RMB extends Money{
 
-                       public Date year;
+                   public Date year;
 
-                       public RMB\(String k,int v,Date y\){
+                   public RMB\(String k,int v,Date y\){
 
-                                        super\(k,v\); //调用父类构造函数
+                                    super\(k,v\); //调用父类构造函数
 
-                                        this.year = y;
+                                    this.year = y;
 
-                                   }
+                               }
 
-                        public void sayWorld\(\){
+                    public void sayWorld\(\){
 
-                                         super.sayHello\(\); //或者直接写
+                                     super.sayHello\(\); //或者直接写
 
-                                         sayHello\(\);
+                                     sayHello\(\);
 
-                                        System.out.println\("world!"\);
+                                    System.out.println\("world!"\);
 
-                                  } 
+                              } 
 
-                         
 
-                      @override
 
-                      public void sayHello\(\){
+                  @override
 
-                                 System.out.println\("hello!"\);
+                  public void sayHello\(\){
 
-                                  }
+                             System.out.println\("hello!"\);
+
+                              }
+                
+                public static void main(String[] args) {
+                            RMB rmb = new RMB("RMB",10,new Date());
+                            rmb.sayWorld();
+                            super.sayWorld();
+                            Money USD = new RMB("USD", 10, new Date());
+                            ((RMB)USD).sayWorld();
+                            }
+      }
+```
+
+
 
