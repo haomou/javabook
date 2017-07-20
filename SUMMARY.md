@@ -15,7 +15,11 @@
     * 1.2.3 程序控制语句
   * 1.3 本章小结
 * [第 2 章 JAVA面向对象设计](modelpian/di-2-zhang-java-mian-xiang-dui-xiang-she-ji.md)
-  * 2.1 类和对象
+  * [2.1 类和对象](modelpian/di-2-zhang-java-mian-xiang-dui-xiang-she-ji/21-lei-he-dui-xiang.md)
+    * [2.1.1 类定义规范](modelpian/di-2-zhang-java-mian-xiang-dui-xiang-she-ji/21-lei-he-dui-xiang/211-lei-ding-yi-gui-fan.md)
+    * 2.1.2 类修饰符
+    * 2.1.3 成员变量修饰符
+    * 2.1.4 方法修饰符
   * 2.2 构造方法与finalize方法
   * 2.3 面向对象三大特性
   * 2.4 JAVA 包
