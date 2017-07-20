@@ -13,7 +13,13 @@
     * [1.2.1 数据类型](modelpian/12-java-ji-chu-yu-fa/121-shu-ju-lei-xing.md)
     * 1.2.2 JAVA运算符
     * 1.2.3 程序控制语句
+  * 1.3 本章小结
 * [第 2 章 JAVA面向对象设计](modelpian/di-2-zhang-java-mian-xiang-dui-xiang-she-ji.md)
+  * 2.1 类和对象
+  * 2.2 构造方法与finalize方法
+  * 2.3 面向对象三大特性
+  * 2.4 JAVA 包
+  * 2.5 本章小结
 * 第 3 章 JAVA 内存管理与异常
 * 第 4 章 JAVA API 介绍
 * 第 5 章 Java 的线程和 Applet
