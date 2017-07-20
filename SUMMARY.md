@@ -26,9 +26,9 @@
   * [2.3 面向对象三大特性](modelpian/di-2-zhang-java-mian-xiang-dui-xiang-she-ji/23-mian-xiang-dui-xiang-san-da-te-xing.md)
     * [2.3.1 抽象](modelpian/di-2-zhang-java-mian-xiang-dui-xiang-she-ji/23-mian-xiang-dui-xiang-san-da-te-xing/231-chou-xiang.md)
     * [2.3.2 继承](modelpian/di-2-zhang-java-mian-xiang-dui-xiang-she-ji/23-mian-xiang-dui-xiang-san-da-te-xing/232-ji-cheng.md)
-    * 2.3.3 封装
-    * 2.3.4 多态
-    * 2.3.5 接口
+    * [2.3.3 封装](modelpian/di-2-zhang-java-mian-xiang-dui-xiang-she-ji/23-mian-xiang-dui-xiang-san-da-te-xing/233-feng-zhuang.md)
+    * [2.3.4 多态](modelpian/di-2-zhang-java-mian-xiang-dui-xiang-she-ji/23-mian-xiang-dui-xiang-san-da-te-xing/234-duo-tai.md)
+    * [2.3.5 接口](modelpian/di-2-zhang-java-mian-xiang-dui-xiang-she-ji/23-mian-xiang-dui-xiang-san-da-te-xing/235-jie-kou.md)
   * [2.4 JAVA 包](modelpian/di-2-zhang-java-mian-xiang-dui-xiang-she-ji/24-java-bao.md)
   * [2.5 本章小结](modelpian/di-2-zhang-java-mian-xiang-dui-xiang-she-ji/25-ben-zhang-xiao-jie.md)
 * [第 3 章 JAVA 内存管理与异常](modelpian/di-3-zhang-java-nei-cun-guan-li-yu-yi-chang.md)
