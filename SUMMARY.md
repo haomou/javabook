@@ -35,6 +35,8 @@
   * [3.1 JVM 内存申请](modelpian/di-3-zhang-java-nei-cun-guan-li-yu-yi-chang/31-jvm-nei-cun-shen-qing.md)
   * [3.2 JVM 内存划分](modelpian/di-3-zhang-java-nei-cun-guan-li-yu-yi-chang/32-jvm-nei-cun-hua-fen.md)
     * [3.2.1 JVM内存划分详解](modelpian/di-3-zhang-java-nei-cun-guan-li-yu-yi-chang/32-jvm-nei-cun-hua-fen/321-jvmnei-cun-hua-fen-xiang-jie.md)
+  * [3.3  JAVA异常处理](modelpian/di-3-zhang-java-nei-cun-guan-li-yu-yi-chang/33-java-yi-chang-chu-li.md)
+    * [3.3.1 JAVA异常定义与处理](modelpian/di-3-zhang-java-nei-cun-guan-li-yu-yi-chang/33-java-yi-chang-chu-li/331-javayi-chang-ding-yi-yu-chu-li.md)
 * [第 4 章 JAVA API 介绍](modelpian/di-4-zhang-java-api-jie-shao.md)
 * [第 5 章 Java 的线程和 Applet](modelpian/di-5-zhang-java-de-xian-cheng-he-applet.md)
 * [第 6 章 XML 与 WebServices](modelpian/di-6-zhang-xml-yu-webservices.md)
