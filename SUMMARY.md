@@ -12,7 +12,7 @@
   * [1.2 JAVA 基础语法](modelpian/12-java-ji-chu-yu-fa.md)
     * [1.2.1 数据类型](modelpian/12-java-ji-chu-yu-fa/121-shu-ju-lei-xing.md)
     * [1.2.2 JAVA运算符](modelpian/12-java-ji-chu-yu-fa/122-javayun-suan-fu.md)
-    * 1.2.3 程序控制语句
+    * [1.2.3 程序控制语句](modelpian/12-java-ji-chu-yu-fa/123-cheng-xu-kong-zhi-yu-ju.md)
   * [1.3 本章小结](modelpian/13-ben-zhang-xiao-jie.md)
 * [第 2 章 JAVA面向对象设计](modelpian/di-2-zhang-java-mian-xiang-dui-xiang-she-ji.md)
   * [2.1 类和对象](modelpian/di-2-zhang-java-mian-xiang-dui-xiang-she-ji/21-lei-he-dui-xiang.md)
