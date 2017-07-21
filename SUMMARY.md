@@ -40,6 +40,7 @@
     * [3.3.2 异常处理机制](modelpian/di-3-zhang-java-nei-cun-guan-li-yu-yi-chang/33-java-yi-chang-chu-li/332-yi-chang-chu-li-ji-zhi.md)
     * [3.3.3 异常处理方式](modelpian/di-3-zhang-java-nei-cun-guan-li-yu-yi-chang/33-java-yi-chang-chu-li/333-yi-chang-chu-li-fang-shi.md)
     * [3.3.4 用户自定义异常](modelpian/di-3-zhang-java-nei-cun-guan-li-yu-yi-chang/33-java-yi-chang-chu-li/334-yong-hu-zi-ding-yi-yi-chang.md)
+    * [3.3.5 断言](modelpian/di-3-zhang-java-nei-cun-guan-li-yu-yi-chang/33-java-yi-chang-chu-li/335-duan-yan.md)
 * [第 4 章 JAVA API 介绍](modelpian/di-4-zhang-java-api-jie-shao.md)
 * [第 5 章 Java 的线程和 Applet](modelpian/di-5-zhang-java-de-xian-cheng-he-applet.md)
 * [第 6 章 XML 与 WebServices](modelpian/di-6-zhang-xml-yu-webservices.md)
