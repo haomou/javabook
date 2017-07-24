@@ -42,6 +42,8 @@ Web浏览器的作用是读取HTML文档，并以网页的形式显示出它们 
 | &lt;ul&gt;列表、&lt;li&gt;表项 | &lt;ul&gt;&lt;li&gt;Coffee&lt;/li&gt;&lt;li&gt;Milk&lt;/li&gt;&lt;/ul&gt; | ![](/assets/t1.png)显示结果如上，无序列表始于&lt;ul&gt;标签。每个列表项始于&lt;li&gt;。 |
 | &lt;ol&gt;列表、&lt;li&gt;表项 | &lt;ol&gt;&lt;li&gt;Coffee&lt;/li&gt;&lt;li&gt;Milk&lt;/li&gt;&lt;/ol&gt; | ![](/assets/t2.png)显示结果如上，此为有序列表标签。 |
 | &lt;dl&gt;自定义列表、&lt;dt&gt;列表项、&lt;dd&gt;列表项注释 | &lt;dl&gt;&lt;dt&gt;Coffee&lt;/dt&gt;&lt;dd&gt;Black hot drink&lt;dt&gt;Milk&lt;/dt&gt;&lt;dd&gt;White cold drink&lt;/dd&gt;&lt;/dl&gt; | ![](/assets/t3.png)显示结果如上，自定义列表不仅仅是一列项目，而是项目及其注释的集合。 |
+| &lt;form&gt;表单、&lt;input&gt;输入 |  | ![](/assets/t4.png) |
+|  |  |  |
 
 
 
