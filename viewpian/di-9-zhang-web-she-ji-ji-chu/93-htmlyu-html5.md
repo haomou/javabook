@@ -48,7 +48,10 @@ Web浏览器的作用是读取HTML文档，并以网页的形式显示出它们 
 | &lt;fieldset&gt;分组、&lt;legend&gt;组标题 | ![](/assets/t6.png) | ![](/assets/t7.png)显示效果如上，将表单内的相关元素分组，legend标签指定组标题。 |
 | &lt;select&gt;选择、&lt;option&gt;选项、&lt;optgroup&gt;选项组标签 | ![](/assets/t9.png) | ![](/assets/t8.png)显示效果如上图，select标签可根据multiple属性创建单选或多选菜单，option标签指定选项，optgroup标签指定选项组的组标题。 |
 | &lt;button&gt;按钮 | &lt;button type="button"&gt;Click Me!&lt;/button&gt; | 该标签定义一个按钮，与input不同的是，该元素内部可以放置内容，比如文本或图像。 |
-| &lt;!--...--&gt; | &lt;!-- &lt;input type=&gt; |  |
+| &lt;!--...--&gt; | &lt;!-- &lt;input type="text" /&gt; --&gt; | 注释标签用来在源文档中插入注释。注释会被浏览器忽略。 |
+| &lt;!DOCTYPE&gt; | &lt;!DOCTYPE html&gt; | 声明位于文档中的最前面的位置，处于&lt;html&gt;标签之前。此标签可告知浏览器文档使用哪种HTML或XHTML规范。该标签可声明三种DTD类型，分别表示严格版本、过度版本以及基于框架的HTML文档。 |
+| &lt;style&gt;样式 | &lt;style type="text/css" &gt;h1{color: red;} p{color: blue}&lt;/style&gt; | 该标签用于为HTML定义样式信，规定在浏览器中如何呈现HTML文档。type属性是必须的，唯一可能的值是“text/css”。style元素位于head部分中。 |
+| &lt;script&gt;标签 | &lt;script type="text/javascript"&gt;document.write\("Hello World!"\)&lt;/script&gt; | 该标签用于定义客户端脚本，biruJavascript。script元素既可以包含脚本语句，也可以通过src属性指向外部脚本文件。 |
 
-
+ 以上介绍了编写HTML网页中比较常用的标签和简单用法，另外HTML标签可以拥有属性，属性提供了有关HTML元素的更多的信息。这些属性主要分为两种：样式属性和事件属性，关于样式属性的具体使用建议读者查阅HTML手册，或则到W3School查阅相关信息，这里就不在赘述，下面介绍一下HTML中的事件属性。
 
