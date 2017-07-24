@@ -35,7 +35,9 @@ Web浏览器的作用是读取HTML文档，并以网页的形式显示出它们 
 | HTML标签 | 示例 | 说明 |
 | :--- | :--- | :--- |
 | &lt;h1&gt; - &lt;h6&gt; 1-6 号标题 | &lt;h1&gt;This is a heading&lt;/h1&gt;、&lt;h2&gt;This is a heading&lt;/h2&gt;、&lt;h3&gt;This is a heading&lt;/h3&gt; | 标题（Heading）标签，分1-6个级别 |
-|  |  |  |
+| &lt;p&gt;段落 | &lt;p&gt;This is a paragraph.&lt;/p&gt; | 段落标签 |
+| &lt;a&gt;链接 | &lt;a href="www.taobao.com"&gt;淘宝&lt;/a&gt; | 使用href属性指定URL;使用name/id属性创建锚 |
+| &lt;img&gt;图像 | &lt;img src="a.jpg" width="10" height="14" /&gt; | 图像标签，src 指定图像 URL |
 
 
 
