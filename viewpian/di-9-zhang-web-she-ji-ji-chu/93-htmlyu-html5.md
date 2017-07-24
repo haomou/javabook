@@ -42,8 +42,10 @@ Web浏览器的作用是读取HTML文档，并以网页的形式显示出它们 
 | &lt;ul&gt;列表、&lt;li&gt;表项 | &lt;ul&gt;&lt;li&gt;Coffee&lt;/li&gt;&lt;li&gt;Milk&lt;/li&gt;&lt;/ul&gt; | ![](/assets/t1.png)显示结果如上，无序列表始于&lt;ul&gt;标签。每个列表项始于&lt;li&gt;。 |
 | &lt;ol&gt;列表、&lt;li&gt;表项 | &lt;ol&gt;&lt;li&gt;Coffee&lt;/li&gt;&lt;li&gt;Milk&lt;/li&gt;&lt;/ol&gt; | ![](/assets/t2.png)显示结果如上，此为有序列表标签。 |
 | &lt;dl&gt;自定义列表、&lt;dt&gt;列表项、&lt;dd&gt;列表项注释 | &lt;dl&gt;&lt;dt&gt;Coffee&lt;/dt&gt;&lt;dd&gt;Black hot drink&lt;dt&gt;Milk&lt;/dt&gt;&lt;dd&gt;White cold drink&lt;/dd&gt;&lt;/dl&gt; | ![](/assets/t3.png)显示结果如上，自定义列表不仅仅是一列项目，而是项目及其注释的集合。 |
-| &lt;form&gt;表单、&lt;input&gt;输入 |  | ![](/assets/t4.png) |
-|  |  |  |
+| &lt;form&gt;表单、&lt;input&gt;输入 | ![](/assets/t5.png) | ![](/assets/t4.png) |
+| &lt;textarea&gt;文本输入域 | &lt;textarea rows="3" cols="20"&gt;填写内容&lt;/textarea&gt; | 定义多行的文本输入控件，在文本输入区内的文本行间，用“%OD%OA”（回车/换行）进行分隔。textarea为表单元素。 |
+| &lt;label&gt;标记 | &lt;label for="male"&gt;Male&lt;label&gt;&lt;input type="radio" name="sex" id="male" /&gt; | 为input元素定义标注（标记），不会向用户呈现任何特殊效果。for属性指定相关元素id。 |
+| &lt;fieldset&gt;分组、&lt;legend&gt;组标题 |  |  |
 
 
 
