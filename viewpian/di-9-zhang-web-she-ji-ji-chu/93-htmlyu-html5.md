@@ -38,7 +38,8 @@ Web浏览器的作用是读取HTML文档，并以网页的形式显示出它们 
 | &lt;p&gt;段落 | &lt;p&gt;This is a paragraph.&lt;/p&gt; | 段落标签 |
 | &lt;a&gt;链接 | &lt;a href="www.taobao.com"&gt;淘宝&lt;/a&gt; | 使用href属性指定URL;使用name/id属性创建锚 |
 | &lt;img&gt;图像 | &lt;img src="a.jpg" width="10" height="14" /&gt; | 图像标签，src 指定图像 URL |
-| &lt;table&gt;表、&lt;tr&gt;行、&lt;td&gt;列、&lt;th&gt;表头 | &lt;table border="1"&gt;&lt;tr&gt;&lt;td&gt;row1,cell1&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; | &lt;table&gt;表、&lt;tr&gt;行、&lt;td&gt;列 |
+| &lt;table&gt;表、&lt;tr&gt;行、&lt;td&gt;列、&lt;th&gt;表头 | &lt;table border="1"&gt;&lt;tr&gt;&lt;td&gt;row1,cell1&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; | 定义表格。每个表格均有若干行（由&lt;tr&gt;标签定义），每行被分割为若干单元格（由&lt;td&gt;标签定义）。数据单元格可以包含文本、图片、列表、段落、表单、水平线、表格等等。 |
+| &lt;ul&gt;列表、&lt;li&gt;表项 | &lt;ul&gt;&lt;li&gt;Coffee&lt;/li&gt;&lt;li&gt;Milk&lt;/li&gt;&lt;/ul&gt; | ![](/assets/t1.png)显示结果如上，无序列表始于&lt;ul&gt;标签。每个列表项始于&lt;li&gt;。 |
 
 
 
