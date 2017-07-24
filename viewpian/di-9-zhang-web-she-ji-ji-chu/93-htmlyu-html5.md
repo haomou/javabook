@@ -45,7 +45,9 @@ Web浏览器的作用是读取HTML文档，并以网页的形式显示出它们 
 | &lt;form&gt;表单、&lt;input&gt;输入 | ![](/assets/t5.png) | ![](/assets/t4.png) |
 | &lt;textarea&gt;文本输入域 | &lt;textarea rows="3" cols="20"&gt;填写内容&lt;/textarea&gt; | 定义多行的文本输入控件，在文本输入区内的文本行间，用“%OD%OA”（回车/换行）进行分隔。textarea为表单元素。 |
 | &lt;label&gt;标记 | &lt;label for="male"&gt;Male&lt;label&gt;&lt;input type="radio" name="sex" id="male" /&gt; | 为input元素定义标注（标记），不会向用户呈现任何特殊效果。for属性指定相关元素id。 |
-| &lt;fieldset&gt;分组、&lt;legend&gt;组标题 |  |  |
+| &lt;fieldset&gt;分组、&lt;legend&gt;组标题 | ![](/assets/t6.png) | ![](/assets/t7.png)显示效果如上，将表单内的相关元素分组，legend标签指定组标题。 |
+| &lt;select&gt;选择、&lt;option&gt;选项、&lt;optgroup&gt;选项组标签 | ![](/assets/t9.png) | ![](/assets/t8.png)显示效果如上图，select标签可根据multiple属性创建单选或多选菜单，option标签指定选项，optgroup标签指定选项组的组标题。 |
+| &lt;button&gt;按钮 | &lt;button type="button"&gt;Click Me!&lt;/button&gt; | 该标签定义一个按钮，与input不同的是，该元素内部可以放置内容，比如文本或图像。 |
 
 
 
