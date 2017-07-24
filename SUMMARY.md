@@ -21,8 +21,8 @@
     * [2.1.3 成员变量修饰符](modelpian/di-2-zhang-java-mian-xiang-dui-xiang-she-ji/21-lei-he-dui-xiang/213-cheng-yuan-bian-liang-xiu-shi-fu.md)
     * 2.1.4 方法修饰符
   * [2.2 构造方法与finalize方法](modelpian/di-2-zhang-java-mian-xiang-dui-xiang-she-ji/22-gou-zao-fang-fa-yu-finalize-fang-fa.md)
-    * 2.2.1 构造方法
-    * 2.2.2 finalize 方法
+    * [2.2.1 构造方法](modelpian/di-2-zhang-java-mian-xiang-dui-xiang-she-ji/22-gou-zao-fang-fa-yu-finalize-fang-fa/221-gou-zao-fang-fa.md)
+    * [2.2.2 finalize 方法](modelpian/di-2-zhang-java-mian-xiang-dui-xiang-she-ji/22-gou-zao-fang-fa-yu-finalize-fang-fa/222-finalize-fang-fa.md)
   * [2.3 面向对象三大特性](modelpian/di-2-zhang-java-mian-xiang-dui-xiang-she-ji/23-mian-xiang-dui-xiang-san-da-te-xing.md)
     * [2.3.1 抽象](modelpian/di-2-zhang-java-mian-xiang-dui-xiang-she-ji/23-mian-xiang-dui-xiang-san-da-te-xing/231-chou-xiang.md)
     * [2.3.2 继承](modelpian/di-2-zhang-java-mian-xiang-dui-xiang-she-ji/23-mian-xiang-dui-xiang-san-da-te-xing/232-ji-cheng.md)

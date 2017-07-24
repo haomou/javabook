@@ -48,6 +48,7 @@ Web浏览器的作用是读取HTML文档，并以网页的形式显示出它们 
 | &lt;fieldset&gt;分组、&lt;legend&gt;组标题 | ![](/assets/t6.png) | ![](/assets/t7.png)显示效果如上，将表单内的相关元素分组，legend标签指定组标题。 |
 | &lt;select&gt;选择、&lt;option&gt;选项、&lt;optgroup&gt;选项组标签 | ![](/assets/t9.png) | ![](/assets/t8.png)显示效果如上图，select标签可根据multiple属性创建单选或多选菜单，option标签指定选项，optgroup标签指定选项组的组标题。 |
 | &lt;button&gt;按钮 | &lt;button type="button"&gt;Click Me!&lt;/button&gt; | 该标签定义一个按钮，与input不同的是，该元素内部可以放置内容，比如文本或图像。 |
+| &lt;!--...--&gt; | &lt;!-- &lt;input type=&gt; |  |
 
 
 
