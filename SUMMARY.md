@@ -59,6 +59,7 @@
     * [9.2.2 WEB程序实例](viewpian/di-9-zhang-web-she-ji-ji-chu/92-webcheng-xu-jie-shao/922-webcheng-xu-shi-li.md)
     * [9.2.3 WEB访问与应答机制](viewpian/di-9-zhang-web-she-ji-ji-chu/92-webcheng-xu-jie-shao/923-webfang-wen-yu-ying-da-ji-zhi.md)
   * [9.3 HTML与HTML5](viewpian/di-9-zhang-web-she-ji-ji-chu/93-htmlyu-html5.md)
+    * [9.3.1 HTML事件属性](viewpian/di-9-zhang-web-she-ji-ji-chu/93-htmlyu-html5/931-htmlshi-jian-shu-xing.md)
 * [第 10 章 JSP/Servlet 详解](viewpian/di-10-zhang-jsp-servlet-xiang-jie.md)
 * [第 11 章 JavaScript](viewpian/di-11-zhang-javascript.md)
 * [第 12 章 CSS 与 CSS3](viewpian/di-12-zhang-cssyu-css3.md)
