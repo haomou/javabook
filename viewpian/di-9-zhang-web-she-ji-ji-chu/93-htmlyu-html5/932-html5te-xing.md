@@ -93,12 +93,13 @@ function drag(ev){
 }
 ```
 
-在这个例子中，设置的数据类型是"Text"，值是可拖动元素img标签的id值drag1。 
+在这个例子中，设置的数据类型是"Text"，值是可拖动元素img标签的id值drag1。
 
 ondragover事件规定在何处放置被拖动的数据，默认地，无法将数据/元素放置到其他元素中。如果需要设置允许放置，我们必须阻止对元素的默认处理方式，这要通过调用ondragover事件的event.preventDefault\(\)方法：
 
 ```
-event.preventDefault();
+event.preventDefault()
+;
 ```
 
 当放置被拖数据时，会发生drop事件，在上面的例子中，ondrop属性调用了一个函数（drop\(event\)），如下：
@@ -121,7 +122,7 @@ HTML5的另外一个重要的特性是它定义了canvas元素标签用于使用
 <canvas id="myCanvas" width="200" height="100"></canvas>
 ```
 
- 由canvas元素本身是没有绘图能力的。所有的绘制工作必须在JavaScript内部完成，例如：
+由canvas元素本身是没有绘图能力的。所有的绘制工作必须在JavaScript内部完成，例如：
 
 ```
 <script type="text/javascript">
@@ -184,14 +185,121 @@ function showError(error){
 }
 ```
 
- 如需在地图中显示结果，您需要访问可使用经纬度的地图服务，比如谷歌地图或百度地图，综合示例如下：
+如需在地图中显示结果，您需要访问可使用经纬度的地图服务，比如谷歌地图或百度地图，综合示例如下：
 
 ```
 <!DOCTYPE html>
 <html>
-    <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
-<body>
+    <head>
+        <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    </head>    
+    <body>
+        <p id="demo">点击这个按钮，获得您的位置：</p>
+        <button onclick="getLocation()">试一下</button>
+        <div id="mapholder"></div>
+        <script>
+            var x=document.getElementById("demo");
+            function getLocation() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition,showError);
+                } else{
+                    x.innerHTML="Geolocation is not supported by this browser.";}
+                }
+            function showPosition(position){
+                lat=position.coords.latitude;
+                lon=position.coords.longitude;
+                latlon=new google.maps.LatLng(lat, lon) <!—转换为 google 经纬度 -->
+                mapholder=document.getElementById('mapholder')
+                mapholder.style.height='250px';
+                mapholder.style.width='500px';
+                var myOptions={
+                    center:latlon,zoom:14, <!—设定地图中心，缩放等级 -->
+                    mapTypeId:google.maps.MapTypeId.ROADMAP, <!—设定街道视图 -->
+                    mapTypeControl:false, <!—设定视图不可切-->
+                    navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
+                };
+                <!—显示地图，在获取的坐标上设定标记 -->
+                var map=new google.maps.Map(document.getElementById("mapholder"),myOptions);
+                var marker=new google.maps.Marker({position:latlon,map:map,title:"You are here!"});
+            }
+            function showError(error){
+                switch(error.code){
+                    case error.PERMISSION_DENIED:
+                        x.innerHTML="User denied the request for Geolocation."
+                        break;
+                    case error.POSITION_UNAVAILABLE:
+                        x.innerHTML="Location information is unavailable."
+                        break;
+                    case error.TIMEOUT:
+                        x.innerHTML="The request to get user location timed out."
+                        break;
+                    case error.UNKNOWN_ERROR:
+                        x.innerHTML="An unknown error occurred."
+                        break;
+                }
+            }
+        </script>
+    </body>
+</html>
 ```
+
+Geolocation对象的getCurrentPosition\(\)方法返回position对象，通过该对象可以获取很多有用信息，如下：
+
+| coords.latitude | 十进制数的纬度 |
+| :--- | :--- |
+| coords.longitude | 十进制数的经度 |
+| coords.accuracy | 位置精度 |
+| coords.altitude | 海拔，海平面以上以米计 |
+| coords.altitudeAccuracy | 位置的海拔精度 |
+| coords.heading | 方向，以正北开始以度计 |
+| coords.speed | 速度，以米/每秒计 |
+| timestamp | 响应的日期/时间 |
+
+Geolocation对象还有一些方法如watchPosition\(\)，该方法返回用户的当前位置，并继续返回用户移动时的更新位置（就像汽车上的 GPS）。还有clearWatch\(\)方法，该方法停止watchPosition\(\)方法。调用方法如下：
+
+```
+navigator.geolocation.watchPosition(showPosition);
+```
+
+#### HTML5 WEB存储
+
+ HTML5提供了两种在客户端存储数据的新方法：
+
+* localStorage - 没有时间限制的数据存储
+
+* sessionStorage - 针对一个session的数据存储
+
+之前，客户端的数据存储都是由cookie完成的。但是cookie不适合大量数据的存储，因为它们由每个对服务器的请求来传递，这使得 cookie速度很慢而且效率也不高。在HTML5中，数据不是由每个服务器请求传递的，而是只有在请求时使用数据。它使在不影响网站性能的情况下存储大量数据成为可能。对于不同的网站，数据存储于不同的区域，并且一个网站只能访问其自身的数据，HTML5同样使用JavaScript来存储和访问数据。
+
+localStorage方法存储的数据没有时间限制。第二天、第二周或下一年之后，数据依然可用。创建和访问localStorage示例如下：
+
+```
+<!DOCTYPE HTML>
+<html>
+    <body>
+        <script type="text/javascript">
+            if (localStorage.pagecount){
+                localStorage.pagecount=Number(localStorage.pagecount) +1;
+            }else{
+                localStorage.pagecount=1;
+            }
+            document.write("Visits: " + localStorage.pagecount + " time(s).");
+        </script>
+        <p>刷新页面会看到计数器在增长。</p>
+        <p>请关闭浏览器窗口，然后再试一次，计数器会继续计数。</p>
+    </body>
+</html>
+```
+
+#### HTML5应用程序缓存
+
+HTML5引入了应用程序缓存，这意味着web应用可进行缓存，并可在没有因特网连接时进行访问。
+
+应用程序缓存为应用带来三个优势：
+
+* 离线
+
+
 
 
 
