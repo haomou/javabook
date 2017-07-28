@@ -263,7 +263,7 @@ navigator.geolocation.watchPosition(showPosition);
 
 #### HTML5 WEB存储
 
- HTML5提供了两种在客户端存储数据的新方法：
+HTML5提供了两种在客户端存储数据的新方法：
 
 * localStorage - 没有时间限制的数据存储
 
@@ -297,7 +297,36 @@ HTML5引入了应用程序缓存，这意味着web应用可进行缓存，并可
 
 应用程序缓存为应用带来三个优势：
 
-* 离线
+* 离线浏览 - 用户可在应用离线
+* 速度 - 已缓存资加载得更快
+* 减少服务器负载 - 浏览器将只从服务器下载更新过或更改过的资源
+
+ 关于HTML5带有cache manifest的HTML文档（供离线浏览）示例如下：
+
+```
+<!DOCTYPE html>
+<html manifest="test.appcache">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    </head>
+    <body>
+        <img src="hello.png" />
+        <p>重新加载本页面，页面中的图像依然可用。</p>
+    </body>
+</html>
+```
+
+上例中通过html标签中的manifest属性指定了客户端要缓存和更新的内容，关于 Catch Manifest 文件介绍如下： 
+
+如需启用应用程序缓存，请在文档的标签中包含manifest属性， 每个指定了manifest的页面在用户对其访问时都会被缓存。如果未指定manifest属性，则页面不会被缓存（除非在manifest文件中直接指定了该页面）。
+
+* manifest文件的建议的文件扩展名是：".appcache"。
+
+* 请注意，manifest文件需要配置正确的MIME-type，即"text/cache-manifest"，必须在web服务器上进行配置。
+
+manifest文件是简单的文本文件，它告知浏览器被缓存的内容（以及不缓存的内容）。 
+
+manifest文件可分为三个部分：
 
 
 
