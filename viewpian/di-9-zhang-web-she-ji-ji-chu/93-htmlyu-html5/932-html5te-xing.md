@@ -301,7 +301,7 @@ HTML5引入了应用程序缓存，这意味着web应用可进行缓存，并可
 * 速度 - 已缓存资加载得更快
 * 减少服务器负载 - 浏览器将只从服务器下载更新过或更改过的资源
 
- 关于HTML5带有cache manifest的HTML文档（供离线浏览）示例如下：
+  关于HTML5带有cache manifest的HTML文档（供离线浏览）示例如下：
 
 ```
 <!DOCTYPE html>
@@ -316,7 +316,7 @@ HTML5引入了应用程序缓存，这意味着web应用可进行缓存，并可
 </html>
 ```
 
-上例中通过html标签中的manifest属性指定了客户端要缓存和更新的内容，关于 Catch Manifest 文件介绍如下： 
+上例中通过html标签中的manifest属性指定了客户端要缓存和更新的内容，关于 Catch Manifest 文件介绍如下：
 
 如需启用应用程序缓存，请在文档的标签中包含manifest属性， 每个指定了manifest的页面在用户对其访问时都会被缓存。如果未指定manifest属性，则页面不会被缓存（除非在manifest文件中直接指定了该页面）。
 
@@ -324,11 +324,87 @@ HTML5引入了应用程序缓存，这意味着web应用可进行缓存，并可
 
 * 请注意，manifest文件需要配置正确的MIME-type，即"text/cache-manifest"，必须在web服务器上进行配置。
 
-manifest文件是简单的文本文件，它告知浏览器被缓存的内容（以及不缓存的内容）。 
+manifest文件是简单的文本文件，它告知浏览器被缓存的内容（以及不缓存的内容）。
 
 manifest文件可分为三个部分：
 
+* CACHE MANIFEST - 在此标题下列出的文件将在首次下载后进行缓存
 
+* NETWORK - 在此标题下列出的文件需要与服务器的连接，且不会被缓存
 
+* FALLBACK - 在此标题下列出的文件规定当页面无法访问时的回退页面（比如404页面）
 
+ 一个完整的manifest文件如下：
+
+ CACHE MANIFEST 
+
+**\# 2012-02-21 v1.0.0 **
+
+/theme.css 
+
+/hello.png 
+
+/main.js 
+
+**NETWORK: **
+
+login.asp 
+
+**FALLBACK: **
+
+/html5/ /404.html
+
+其中\#部分是注释内容，要注意一旦应用被缓存，它就会保持缓存直到发生下列情况：
+
+1. 用户清空浏览器缓存
+2. manifest文件被修改（参阅下面的提示）
+3. 由程序来更新应用缓存
+
+#### HTML5 WEB WORKER
+
+当在HTML页面中执行脚本时，页面的状态是不可响应的，直到脚本已完成。web worker是运行在后台的JavaScript，独立于其他脚本，不会影响页面的性能。您可以继续做任何愿意做的事情：点击、选取内容等等， 而此时web worker在后台运行。举一个完整的 web worker示例如下：
+
+```
+<!DOCTYPE html>
+<html>
+<body>
+    <p>count: <output id="result"></output></p>
+    <button onclick="startWorker()">start Worker</button>
+    <button onclick="stopWorker()">stop Worker</button>
+    <script>
+        var w;
+        function startWorker(){
+            if(typeof(Worker)!=="undefined"){
+                if(typeof(w)=="undefined"){
+                    w=new Worker("count.js");
+                }
+                w.onmessage = function (event) {
+                    document.getElementById("result").innerHTML=event.data;
+                };
+            }else{
+                document.getElementById("result").innerHTML="Sorry,
+                your browser does not support Web Workers...";
+            }
+        }
+        function stopWorker(){ 
+            w.terminate();
+        }
+    </script>
+</body>
+</html>
+```
+
+该实例在点击startWorker按钮之后会将count.js调入后台执行，创建一个新的web Worker对象，并注册了监听消息的方法，该方法用于监听后台执行的js代码传回的消息。直到执行stopWorker方法，停止执行，其中count.js代码如下：
+
+```
+var i=0;
+function timedCount(){
+    i=i+1;
+    postMessage(i);
+    setTimeout("timedCount()",500); <!—定时 500ms 执行 -->
+}
+timedCount();
+```
+
+上面代码中最重要的是postMessage方法，该方法用于向HTML页面传回参数信息，本例中传回的是计数值，该信息会被startWorker 中的onmessage事件捕获到，并从event中获取所传的参数值。 需要注意的是，由于web worker位于外部文件中，它们无法访问下例 JavaScript对象：window对象、document对象和parent对象。
 
