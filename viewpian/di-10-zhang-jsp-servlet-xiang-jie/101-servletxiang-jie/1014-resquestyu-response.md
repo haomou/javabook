@@ -2,7 +2,7 @@
 
 在service方法中传入了一组参数HttpServletRequest和HttpServletResponse，由于B/S架构的程序是请求/应答模式，这种模式在 JAVA中对应的实体类就是如上的实现Http协议的类。request表示请求，其最重要的一个功能是封装客户端请求参数，它由 WebServer生成。前面提到Web应用程序必须部署到Web服务器中才能运行，WebServer提供对WebApp的支持，那提供了那些支持呢？（1）帮我们管理Servlet的生命周期（比如创建servlet对象，调用servlet的init,service,destroy等方法）；（2）帮我们生成 request的实例，它将客户端传过来的请求参数数据，放入到request对象的parameter参数当中，我们可以通过request的一些方法得到请求参数的数值。
 
-关于WEB请求最常用的方法是使用表单和URL重写。 
+关于WEB请求最常用的方法是使用表单和URL重写。
 
 懂一点html的读者都知道form标签，这个标签主要用于提交用户请求，并附加表单中的信息，格式如下：
 
@@ -28,33 +28,42 @@ http://202.38.73.47:8080/MyServlet?参数名 1=参数值 1&参数名 2=参数值
 
 | **方法** | **说明** |
 | :--- | :--- |
-| request.getContextPath\(\) | 得到web应用程序名称（虚拟路径），一般默认为项目名，创建项目时可以设置。 |
-| request.getServletPath\(\) | 如果请求的是servlet，那么返回的该servlet在web.xml中配置的url-pattern；如果是jsp，返回jsp文件名。 |
-| request.getRequestURI\(\) | 请求的相对路径，request.getContextPath\(\)+request.getServletPath\(\) |
+|  | request.getContextPath\(\) |
+|  | 得到web应用程序名称（虚拟路径），一般默认为项目名，创建项目时可以设置。 |
+|  | request.getServletPath\(\) |
+|  | 如果请求的是servlet，那么返回的该servlet在web.xml中配置的url-pattern；如果是jsp，返回jsp文件名。 |
+|  | request.getRequestURI\(\) |
+|  | 请求的相对路径，request.getContextPath\(\)+request.getServletPath\(\) |
 | request.getRequestURL\(\) | 请求的全部路径，绝对路径 |
-| request.getMethod\(\) | 请求类别，默认是get请求，只有使用form表单提交才可以使用post请求 |
+|  | request.getMethod\(\) |
+|  | 请求类别，默认是get请求，只有使用form表单提交才可以使用post请求 |
 | request.getRemotePort\(\) | 客户端请求端口 |
 | request.getRemoteAddr\(\) | 得到客户端的IP地址 |
 | request.getServerName\(\) | 得到服务器名称 |
 | request.getServerPort\(\) | 得到服务器端口号 |
 | request.getRealPath\(“/”\) | 得到当前Web应用程序的绝对路径 |
-| request.getHeader\("User-Agent"\) | 得到客户端浏览器的信息 |
-| request.getRequestDispatcher\("&lt;url-pattern&gt;"\) | 得到请求转发对象 |
-| request.getHeaderNames\(\) | 得到所有请求头名称的Enumeration |
+|  | request.getHeader\("User-A |
+
+gent"\) \| 得到客户端浏览器的信息 \|  
+\| request.getRequestDispatc  
+her\("&lt;url-pattern&gt;"\) \| 得到请求转发对象 \|  
+\| request.getHeaderNames\(\) \| 得到所有请求头名称的Enumeration \|
 
 Service方法中的HttpServletResponse对象主要用于向客户端发送数据， 呈现响应内容。HttpServletResponse对象可以向客户端发送三种类型的数据:a.响应头 b.状态码 c.数据。
 
-* 设置响应头主要是控制客户端的编码方式，有两种方法如下，它们作  用相同。
-  response.setContentType\("text/html;charset=UTF-8"\);
+* 设置响应头主要是控制客户端的编码方式，有两种方法如下，它们作  
+  用相同。  
+  response.setContentType\("text/html;charset=UTF-8"\);  
   response.setHeader\("Content-type","text/html;charset=UTF-8"\);
 
-* 在向客户程序发送任何文档内容之前调用方法设置状态代码。可以使用HttpServletResponse接口的setStatus，sedRedirect或 sendError方法设置状态码。状态代码由3位数字组成，第一个数字定义了响应的类别,后面两位数字没有具体的分类。在servlet中建议使用HttpServletResponse中定义的常量来引用状态代码。1. 设置一般状态码可以使用setStatus（int）方法，参数可以为int 类型状态代码，也可以为HttpServletResponse中定义的常量；2.设置302和404状态代码：sendRedirect（String url）和 sendError  （int code，String msg）方法，二者会抛出IOException异常。
+* 在向客户程序发送任何文档内容之前调用方法设置状态代码。可以使用HttpServletResponse接口的setStatus，sedRedirect或 sendError方法设置状态码。状态代码由3位数字组成，第一个数字定义了响应的类别,后面两位数字没有具体的分类。在servlet中建议使用HttpServletResponse中定义的常量来引用状态代码。1. 设置一般状态码可以使用setStatus（int）方法，参数可以为int 类型状态代码，也可以为HttpServletResponse中定义的常量；2.设置302和404状态代码：sendRedirect（String url）和 sendError  
+  （int code，String msg）方法，二者会抛出IOException异常。
 
 状态代码302命令浏览器连接到新的url。sendRedirect方法生成302响应及Location报头，给出新的url放入Location报头之前，系统自动将相对url转换为绝对url。状态代码404用于服务器没有找到文档的情况 。sendError方法发送状态代码及小段简短信息，信息被自动安排在HTML文档中发送给用户。
 
 返回数据到客户端，可以使用2种方式向客户端写入信息。
 
-1. 使用OutputStream向客户端写入数据，示例代码如下：
+1.使用OutputStream向客户端写入数据，示例代码如下：
 
 ```
 response.setHeader("Content-type","text/html;charset=UTF-8");
@@ -63,7 +72,7 @@ OutputStream stream = response.getOutputStream();
 stream.write(data.getBytes("UTF-8"));
 ```
 
- 2. 使用Writer向客户端写入信息，示例代码如下：
+2.使用Writer向客户端写入信息，示例代码如下：
 
 ```
 response.setCharacterEncoding("UTF-8");
@@ -78,7 +87,7 @@ writer.write("你好！");
 String path = this.getServletContext.getRealPath(“/ 你好.jpg”);
 String fileName = path.subString(path.lastIndexOf(“\\”));
 Response.setHeader(“content-disposition”,”attachment;filename”+URLEncoder.encode(fileName,”UTF-8”));
-//设置响应头，告诉浏览器，该响应是下载响应，如果文件名包含中文，必须使用 URL 编码
+//设置响应头，告诉浏览器，该响应是下载响应，如果文件名包含中文，必须使用URL编码
 ```
 
 
