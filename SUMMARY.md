@@ -70,6 +70,7 @@
     * [10.1.1 Servlet生命周期](viewpian/di-10-zhang-jsp-servlet-xiang-jie/101-servletxiang-jie/1011-servletsheng-ming-zhou-qi.md)
     * [10.1.2 ServletConfig接口介绍](viewpian/di-10-zhang-jsp-servlet-xiang-jie/101-servletxiang-jie/1012-servletconfigjie-kou-jie-shao.md)
     * [10.1.3 service方法介绍](viewpian/di-10-zhang-jsp-servlet-xiang-jie/101-servletxiang-jie/1013-servicefang-fa-jie-shao.md)
+    * [10.1.4 Resquest与Response](viewpian/di-10-zhang-jsp-servlet-xiang-jie/101-servletxiang-jie/1014-resquestyu-response.md)
 * [第 11 章 JavaScript](viewpian/di-11-zhang-javascript.md)
 * [第 12 章 CSS 与 CSS3](viewpian/di-12-zhang-cssyu-css3.md)
 * [第 13 章 AJAX 与 jQuery](viewpian/di-13-zhang-ajax-yu-jquery.md)
