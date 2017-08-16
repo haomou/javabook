@@ -28,7 +28,7 @@ b = <%= b %> out: <%out.print(b);%><br>
 
 ```
 <%@ 指令名称 属性 1="属性值 1" … 属性 n="属性值 n"%>  
-<%@ 指令名称 属性 n="属性值 n"%>  
+<%@ 指令名称 属性 n="属性值 n"%>
 ```
 
 指令元素包括3种指令，page指令，include指令，taglib指令。
@@ -47,25 +47,25 @@ page指令用于定义JSP文件中的全局属性，\[\]表示属性可选。格
 
 **language：**定义页面使用的脚本语言，默认值为Java
 
-**import：**用于导入一些JSP页面中要用到的Java包或类，可以有多个，用 ","隔开，默认情况下自动导入java.lang.\*, javax.servlet.\*, javax.servlet.jsp.\* , javax.servlet.http.\* 
+**import：**用于导入一些JSP页面中要用到的Java包或类，可以有多个，用 ","隔开，默认情况下自动导入java.lang.\*, javax.servlet.\*, javax.servlet.jsp.\* , javax.servlet.http.\*
 
-**contentType：**设置JSP页面的MIME类型，默认值为"type='text/html;charset=ISO-8859-1'"， 设置值的方式为"MIME类型"或"MIME类型;charset=编码" 
+**contentType：**设置JSP页面的MIME类型，默认值为"type='text/html;charset=ISO-8859-1'"， 设置值的方式为"MIME类型"或"MIME类型;charset=编码"
 
-**session：**设置是否允许JSP页面中使用session对象和session有效范围内的对象。 
+**session：**设置是否允许JSP页面中使用session对象和session有效范围内的对象。
 
-**buffer：**它的值为none或指定的数字，用于设置输出缓冲区的大小，默认值为8Kb值为none表示没有缓冲。 
+**buffer：**它的值为none或指定的数字，用于设置输出缓冲区的大小，默认值为8Kb值为none表示没有缓冲。
 
 **autoFlash：**设置当缓冲区已满时，是否会自动刷新缓冲区，如果值为false，当缓冲区溢出时就会出现异常;当buffer的值为none 时，此属性的值不能设为false,此属性的默认值为true
 
-**isThreadSafe：**设置JSP页面是否可以多线程访问，如果为true， 则此JSP页面可同时响应多个客户请求，如果值为false,则在某个时刻内只能处理一个客户的请求，此属性默认值为true 
+**isThreadSafe：**设置JSP页面是否可以多线程访问，如果为true， 则此JSP页面可同时响应多个客户请求，如果值为false,则在某个时刻内只能处理一个客户的请求，此属性默认值为true
 
 **info：**设置JSP页面的信息字符串
 
-**errorPage：**指出当出现异常时转向页面的URL 
+**errorPage：**指出当出现异常时转向页面的URL
 
 **isErrorPage：**设置当前页面是否为出错页面，如果为true则可以使用exception对象，否则不行，默认值false
 
-2. include指令
+1. include指令
 
 使用include指令可以在JSP中包含一个静态的文件，同时解析这个文件中的JSP语句。 格式：
 
@@ -76,7 +76,7 @@ page指令用于定义JSP文件中的全局属性，\[\]表示属性可选。格
 
 说明：包含的file文件的路径一般都是相对路径，不需要端口、 协议或域名，如"error.jsp"，"/templates/onlinestore.html"， "/beans/calendar.jsp"等。包含文件中不能使用&lt;html&gt;、&lt;/html&gt;、&lt;body&gt;、&lt;/body&gt; 标记，因为这将会影响原 JSP 文件中同样的标记， 有时会导致错误。
 
-3. taglib指令
+1. taglib指令
 
 定义一个标签库及其自定义标签的前缀。 格式：
 
@@ -103,28 +103,34 @@ jsp:forward：把请求转到一个新的页面。
 jsp:plugin：根据浏览器类型为Java插件生成OBJECT或EMBED标记。
 ```
 
- 1. jsp:include动作，该动作把指定文件插入正在生成的页面。其语法如下：
+1. jsp:include动作，该动作把指定文件插入正在生成的页面。其语法如下：
 
 ```
-＜jsp:include page="relative URL" flush="true" /＞
+<jsp:include page="relative URL" flush="true" />
 ```
 
 前面已经介绍过include指令，它是在JSP文件被转换成Servlet的时候引入文件，而这里的jsp:include动作不同，插入文件的时间是在页面被请求的时候。jsp:include动作的文件引入时间决定了它的效率要稍微差一点，而且被引用文件不能包含某些JSP代码（例如不能设置HTTP头）， 但它的灵活性却要好得多。如下例在test.jsp页面引入其他页面。
 
 ```
-＜!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"＞
-＜html＞
-＜head＞
-    ＜title＞test＜/ title＞
-＜/head＞
-＜body＞
-    ＜ol＞
-        ＜li＞＜jsp:include page="news/Item1.html" flush="true"/＞
-        ＜li＞＜jsp:include page="news/Item2.html" flush="true"/＞
-    ＜/ol＞
-＜/body＞
-＜/html＞
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+    <title>test</title>
+</head>
+<body>
+    <ol>
+        <li><jsp:include page="news/Item1.html" flush="true"/></li>
+        <li><jsp:include page="news/Item2.html" flush="true"/></li>
+    </ol>
+</body>
+</html>
 ```
 
+2. jsp:useBean动作，用来装载一个将在JSP页面中使用的JavaBean。 这个功能非常有用，因为它使得我们既可以发挥Java组件重用的优势，同时也避免了损失JSP区别于Servlet的方便性。jsp:useBean动作最简单的语法为：
 
+```
+<jsp:useBean id="name" class="package.class" />
+```
+
+这行代码的含义是：“创建一个由class属性指定的类的实例，然后把它绑定到其名字由id属性给出的变量上”。不过，就象我们接下来会看到的，定义一个scope属性可以让Bean关联到更多的页面。此时，jsp:useBean动作只有在不存在同样id和scope的 Bean时才创建新的对象实例，同时， 获得现有Bean的引用就变得很有必要。 获得Bean实例之后，要修改 Bean 的属性既可以通过 jsp:setProperty 动作进行，也可以在 Scriptlet 中利用 id 属性所命名的对象变量，通过调用 该对象的方法显式地修改其属性。这使我们想起，当我们说“某个 Bean 有一个类型为 X 的属性 foo”时，就意味着“这个类有一个返回值类型为 X 的 getFoo 方法，还有一个 setFoo 方法以 X 类型的值为参数”。
 
