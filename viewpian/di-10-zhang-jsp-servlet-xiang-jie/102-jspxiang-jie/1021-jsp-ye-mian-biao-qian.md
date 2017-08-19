@@ -224,5 +224,66 @@ Body
 <jsp:setProperty name="myName" property="someProperty" ... /></jsp:useBean>
 ```
 
+此时，jsp:setProperty只有在新建Bean实例时才会执行，如果是使用现有实例则不执行jsp:setProperty。jsp:setProperty动作有下面四个属性：
+
+name属性是必需的。它表示要设置属性的是哪个Bean。 
+
+property属性是必需的。它表示要设置哪个属性。有一个特殊用法：如果property的值是“\*”，表示所有名字和Bean属性名字匹配的请求参数都将被传递给相应的属性set方法。
+
+value属性是可选的。该属性用来指定Bean属性的值。字符串数据会在目标类中通过标准的valueOf方法自动转换成数字、boolean、Boolean、 byte、Byte、char、Character。例如，boolean和Boolean类型的属性值（比如“true”）通过Boolean.valueOf转换，int和 Integer类型的属性值（比如 “42”）通过Integer.valueOf转换。
+
+value和param不能同时使用，但可以使用其中任意一个。 
+
+param是可选的。它指定用哪个请求参数作为Bean属性的值。如果当前请求没有参数，则什么事情也不做，系统不会把null传递给Bean属性的set方法。因此，你可以让Bean自己提供默认属性值，只有当请求参数明确指定了新值时才修改默认属性值。 
+
+例如，下面的代码片断表示：如果存在numItems请求参数的话，把numberOfItems属性的值设置为请求参数numItems的值；否则什么也不做。
+
+```
+<jsp:setProperty name="orderBean" property="numberOfItems" param="numItems" />
+```
+
+如果同时省略value和param，其效果相当于提供一个param且其值等于property的值。进一步利用这种借助请求参数和属性名字相同进行自动赋值的思想，你还可以在property（Bean属性的名字）中指定“\*”，然后省略value和param。此时，服务器会查看所有的 Bean属性和请求参数， 如果两者名字相同则自动赋值。
+
+4. jsp:getProperty动作，jsp:getProperty动作提取指定Bean属性的值，转换成字符串，然后输出。jsp:getProperty有两个必需的属性，即：name，表示Bean的名字；property，表示要提取哪个属性的值。 
+
+5. jsp:forward动作，forward动作用来把当前的JSP页面重定向到另一个页面（HTML 文件、JSP 页面、Servlet）。地址还是当前页面的地址。内容则是另一个页的内容。Forward动作有两种形式： 
+
+不带参数的forward动作
+
+```
+<jsp:forward page=”url”/>
+```
+
+带参数的include动作
+
+```
+<jsp:forward page=”url”>
+    <jsp:param name=”ParamName” value=”ParamValue”/>
+</jsp:forward>
+```
+
+6.jsp:plugin动作，plugin动作为Web开发人员提供了一种在JSP文件中嵌入客户端运行的Java程序（如：Applet）的方法。在处理这个动作的时候，根据客户端浏览器的不同，JSP在执行以后将分别输出为OBJECT或EMBED这两个不同的HTML元素。由于使用较少，具体语法这里不做详细介绍。
+
+#### **注释**
+
+注释分为三种：html注释，java注释与jsp注释。
+
+* html注释在客户端浏览器中依然可见，因为转译后的servlet会把这部分内容向客户端打印发送，可以查看转译文件示例如下：
+
+```
+out.write("\r\n");
+out.write("<html>\r\n");
+out.write(" <head> \r\n");
+out.write(" <title>test</title>\r\n");
+out.write(" </head>\r\n");
+out.write(" \r\n");
+out.write(" <body>\r\n");
+out.write(" <!-- html 注释，在客户端浏览器中依然可见-->\r\n"); 
+```
+
+* jsp注释：格式为：&lt;%-- 注释内容 --%&gt;，JSP容器忽略此注释的主体，转译后的java类看不到此注释内容，只能通过查看原始JSP文件查看。
+
+* Java注释：转译后的java类可看到此注释，客户端不可见
+
 
 
