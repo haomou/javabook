@@ -76,6 +76,7 @@
     * [10.2.1 JSP 页面标签](viewpian/di-10-zhang-jsp-servlet-xiang-jie/102-jspxiang-jie/1021-jsp-ye-mian-biao-qian.md)
 * [第 11 章 JavaScript](viewpian/di-11-zhang-javascript.md)
 * [第 12 章 CSS 与 CSS3](viewpian/di-12-zhang-cssyu-css3.md)
+  * [12.1 CSS 基础](viewpian/di-12-zhang-cssyu-css3/121-css-ji-chu.md)
 * [第 13 章 AJAX 与 jQuery](viewpian/di-13-zhang-ajax-yu-jquery.md)
 
 ## Controller篇
