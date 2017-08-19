@@ -100,10 +100,10 @@ jsp:useBean：寻找或者实例化一个JavaBean。
 jsp:setProperty：设置JavaBean的属性。
 jsp:getProperty：输出某个JavaBean的属性。
 jsp:forward：把请求转到一个新的页面。
-jsp:plugin：根据浏览器类型为Java插件生成OBJECT或EMBED标记。
+jsp:plugin：根据浏览器类型为Java插件生成OBJECT或EMBED标记
 ```
 
-1. jsp:include动作，该动作把指定文件插入正在生成的页面。其语法如下：
+1.jsp:include动作，该动作把指定文件插入正在生成的页面。其语法如下：
 
 ```
 <jsp:include page="relative URL" flush="true" />
@@ -126,11 +126,103 @@ jsp:plugin：根据浏览器类型为Java插件生成OBJECT或EMBED标记。
 </html>
 ```
 
-2. jsp:useBean动作，用来装载一个将在JSP页面中使用的JavaBean。 这个功能非常有用，因为它使得我们既可以发挥Java组件重用的优势，同时也避免了损失JSP区别于Servlet的方便性。jsp:useBean动作最简单的语法为：
+2.jsp:useBean动作，用来装载一个将在JSP页面中使用的JavaBean。 这个功能非常有用，因为它使得我们既可以发挥Java组件重用的优势，同时也避免了损失JSP区别于Servlet的方便性。jsp:useBean动作最简单的语法为：
 
 ```
 <jsp:useBean id="name" class="package.class" />
 ```
 
-这行代码的含义是：“创建一个由class属性指定的类的实例，然后把它绑定到其名字由id属性给出的变量上”。不过，就象我们接下来会看到的，定义一个scope属性可以让Bean关联到更多的页面。此时，jsp:useBean动作只有在不存在同样id和scope的 Bean时才创建新的对象实例，同时， 获得现有Bean的引用就变得很有必要。 获得Bean实例之后，要修改 Bean 的属性既可以通过 jsp:setProperty 动作进行，也可以在 Scriptlet 中利用 id 属性所命名的对象变量，通过调用 该对象的方法显式地修改其属性。这使我们想起，当我们说“某个 Bean 有一个类型为 X 的属性 foo”时，就意味着“这个类有一个返回值类型为 X 的 getFoo 方法，还有一个 setFoo 方法以 X 类型的值为参数”。
+这行代码的含义是：“创建一个由class属性指定的类的实例，然后把它绑定到其名字由id属性给出的变量上”。不过，就象我们接下来会看到的，定义一个scope属性可以让Bean关联到更多的页面。此时，jsp:useBean动作只有在不存在同样id和scope的 Bean时才创建新的对象实例，同时， 获得现有Bean的引用就变得很有必要。 获得Bean实例之后，要修改Bean的属性既可以通过 jsp:setProperty动作进行，也可以在Scriptlet中利用id属性所命名的对象变量，通过调用 该对象的方法显式地修改其属性。这使我们想起，当我们说“某个Bean有一个类型为X的属性foo”时，就意味着“这个类有一个返回值类型为X的getFoo方法，还有一个setFoo方法以X类型的值为参数”。
+
+有关jsp:setProperty动作的详细情况在后面讨论。但现在必须了解的是，我们既可以通过jsp:setProperty动作的value属性直接提供一个值，也可以通过param属性声明Bean的属性值来自指定请求参数，还可以列出Bean属性表明它的值应该来自请求参数中的同名变量。 
+
+在JSP表达式或Scriptlet中读取Bean属性通过调用相应的getXXX方法实现，或者更一般地，使用jsp:getProperty动作。 
+
+注意：包含Bean的类文件应该放到服务器正式存放Java类的目录下， 而不是保留给修改后能够自动装载的类的目录。例如，对于Java Web Server来说，Bean和所有Bean用到的类都应该放入classes目录，或者封装进jar文件后放入lib目录，但不应该放到servlets下。
+
+下面是一个很简单的例子，它的功能是装载一个Bean，然后设置/读取它的message属性。
+
+```
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"＞
+<html>
+<head>
+    <title>test</title>
+</head>
+<body>
+    <jsp:useBean id="test" class="com.test.TestBean" />
+    <jsp:setProperty name="test" property="message" value="hi!" />
+    <h1>
+        Message:
+        <jsp:getProperty name="test" property="message" />
+    </h1>
+</body>
+</html>
+```
+
+ 该页面用到了一个TestBean，TestBean的代码如下：
+
+```
+package com.test;
+public class TestBean {
+    private String message = "No message";
+    public String getMessage() { 
+        return(message);
+    }
+    public void setMessage(String message) {
+        this.message = message;
+    }
+}
+```
+
+ 使用Bean最简单的方法是先用下面的代码装载Bean：
+
+```
+ <jsp:useBean id="name" class="package.class" />
+```
+
+然后通过jsp:setProperty和jsp:getProperty修改和提取Bean的属性。 不过有两点必须注意。 
+
+第一，我们还可以用下面这种格式实例化Bean：
+
+```
+<jsp:useBean ...>
+Body
+</jsp:useBean>
+```
+
+说明：只有当第一次实例化Bean时才执行Body部分，如果是利用现有的Bean实例则不执行Body部分。正如下面将要介绍的，jsp:useBean并非总是意味着创建一个新的Bean实例。 
+
+第二，除了id和class外，jsp:useBean还有其他三个属性，即：scope， type，beanName。下面简要说明这些属性的用法。 
+
+**id 属性，**命名引用该Bean的变量。如果能够找到id和scope相同的 Bean实例，jsp:useBean动作将使用已有的Bean实例而不是创建新的实例。
+
+**class属性，**指定Bean的完整包名路径。 
+
+**scope属性，**指定Bean在哪种上下文内可用，可以取下面的四个值之一：page，request，session和application。 默认值是 page，表示该Bean只在当前页面内可用（保存在当前页面的PageContext内）。 request表示该Bean在当前的客户请求内有效（保存在ServletRequest对象内）。 session表示该Bean对当前HttpSession内的所有页面都有效。最后，如果取值 application，则表示该Bean对所有具有相同ServletContext的页面都有效。scope之所以很重要，是因为jsp:useBean只有在不存在具有相同id和scope的对象时才会实例化新的对象；如果已有id和scope都相同的对象则直接使用已有的对象，此时 jsp:useBean开始标记和结束标记之间的任何内容都将被忽略。
+
+**type属性，**指定引用该对象的变量的类型，它必须是Bean类的名字、 超类名字、该类所实现的接口名字之一。请记住变量的名字是由id属性指定的。 
+
+**beanName属性，**指定Bean的名字。如果提供了type属性和beanName属性，允许省略class属性。
+
+3. jsp:setProperty动作，jsp:setProperty用来设置已经实例化的Bean对象的属性，有两种用法。
+
+首先，你可以在jsp:useBean元素的外面（后面）使用jsp:setProperty， 如下所示：
+
+```
+<jsp:useBean id="myName" ... />
+ ...
+<jsp:setProperty name="myName" property="someProperty" ... />
+```
+
+此时，不管jsp:useBean是找到了一个现有的Bean，还是新创建了一个Bean实例，jsp:setProperty都会执行。 
+
+第二种用法是把 jsp:setProperty放入jsp:useBean元素的内部，如下所示：
+
+```
+<jsp:useBean id="myName" ... >
+ ...
+<jsp:setProperty name="myName" property="someProperty" ... /></jsp:useBean>
+```
+
+
 
