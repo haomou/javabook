@@ -79,6 +79,8 @@
 * [第 12 章 CSS 与 CSS3](viewpian/di-12-zhang-cssyu-css3.md)
   * [12.1 CSS 基础](viewpian/di-12-zhang-cssyu-css3/121-css-ji-chu.md)
   * [12.2 CSS 高级语法](viewpian/di-12-zhang-cssyu-css3/122-css-gao-ji-yu-fa.md)
+  * [12.3 CSS使用](viewpian/di-12-zhang-cssyu-css3/123-cssshi-yong.md)
+    * [12.3.1 CSS 背景](viewpian/di-12-zhang-cssyu-css3/123-cssshi-yong/1231-css-bei-jing.md)
 * [第 13 章 AJAX 与 jQuery](viewpian/di-13-zhang-ajax-yu-jquery.md)
 
 ## Controller篇
